@@ -1,0 +1,22 @@
+group 'com.zemrow.test.tts'
+
+apply plugin: 'java'
+
+    sourceCompatibility = 1.8
+    compileJava.options.encoding = 'UTF-8'
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        jcenter()
+    }
+
+    dependencies {
+        // marytts http://mary.dfki.de/
+        compile group: 'de.dfki.mary', name: 'marytts-lang-ru', version: '5.2'
+        compile group: 'de.dfki.mary', name: 'voice-cmu-slt-hsmm', version: '5.2'
+	    compile group: 'de.dfki.mary', name: 'voice-dfki-poppy-hsmm', version: '5.2'
+        // Нет в maven репозиториях compile group: 'marytts', name: 'voice-voxforge-ru-nsh', version: '5.0-SNAPSHOT' 
+        // freetts https://freetts.sourceforge.io/
+        compile group: 'net.sf.sociaal', name: 'freetts', version: '1.2.2'
+}
